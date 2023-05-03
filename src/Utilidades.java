@@ -42,3 +42,8 @@ public static int ValidaNumero(int num, String msj){
  }
 
 }
+
+public int descomponerRut() {
+        String[] parts = rut.split("-");
+        return Integer.parseInt(parts[0]);
+    }
