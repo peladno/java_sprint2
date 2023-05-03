@@ -1,8 +1,9 @@
 
 import java.util.Scanner;
+import java.util.UUID;
 
 public class Utilidades {
-    static Scanner sc = new Scanner(System.in);
+    private static final Scanner sc = new Scanner(System.in);
 
     public static String ValidaVacio(String str, String msj) {
 
@@ -43,6 +44,20 @@ public class Utilidades {
     public int descomponerRut(String rut) {
         String[] parts = rut.split("-");
         return Integer.parseInt(parts[0]);
+    }
+
+    public static String generarId() {
+        UUID uuid = UUID.randomUUID();
+        return uuid.toString();
+    }
+
+    public static boolean chequearMinMax(String str, int min, int max) {
+        try {
+            int num = Integer.parseInt(str);
+            return num >= min && num <= max;
+        } catch (NumberFormatException e) {
+            return false;
+        }
     }
 
 }
