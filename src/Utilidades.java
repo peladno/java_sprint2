@@ -9,21 +9,32 @@ public class Utilidades {
     private static final Scanner sc = new Scanner(System.in);
     private static final DateFormat DATE_FORMAT = new SimpleDateFormat("dd/MM/yyyy");
 
-    public static String ValidaVacio(String str, String msj) {
-
+    public static String ValidaString(String str, String msj, int min, int max) {
         do {
             System.out.println("Ingrese " + msj + ":");
             str = sc.nextLine();
-            if (str.isEmpty()) {
-                System.out.println("[ ** WARNING ** ] Campo Obligatorio para " + msj);
+            if (str !=null ) {
+                str=str.trim();
+                if (str.length() < min) {
+                    System.out.println("El campo requiere tener un minimo de " + min +" caracteres:" + str + " tiene " + str.length() + " caracteres");
+                    str="";
+                }
+                if (str.length() > max) {
+                    System.out.println("El campo supera el maximo de " + max +" caracteres:" + str + " tiene " + str.length() + " caracteres");
+                    str="";
+                }
             }
-        } while (str.isEmpty());
+            if (str == null || str.trim().isEmpty()) {
+                System.out.println("[ ** WARNING ** ] Campo obligatorio para " + msj);
+            }
+        } while (str == null || str.trim().isEmpty());
+
         return str;
     }
 
     // nombre=ValidaVacio(nombre,"Nombres");
 
-    public static int ValidaNumero(int num, String msj) {
+    public static int ValidaNumero(int num, String msj, int min, int  max) {
 
         boolean esNumero = false;
 
@@ -37,8 +48,12 @@ public class Utilidades {
                 sc.next();
                 num = 1;
             }
-            if (num < 1) {
-                System.out.println("[ ** WARNING ** ] Valor debe ser superior a " + num);
+            if (num > min) {
+                System.out.println("[ ** WARNING ** ] Valor debe ser superior a " + min);
+                esNumero = false;
+            }
+            if (num < max) {
+                System.out.println("[ ** WARNING ** ] Valor No debe ser superior a " + max);
                 esNumero = false;
             }
         } while (!esNumero);
@@ -65,15 +80,39 @@ public class Utilidades {
     }
 
     public static boolean validarLongitud(String str, int min, int max) {
-        boolean longitudValida = false;
 
-        if (str != null && str.length() >= min && str.length() <= max) {
-            longitudValida = true;
-        } else {
-            System.out.println("El campo requiere tener entre " + min + " y " + max + " caracteres");
+
+    public static boolean validarRut(String rut) {
+        rut = rut.replaceAll("\\.|\\-", "");
+
+        // Validar formato del rut
+        if (!rut.matches("^\\d{7,8}[0-9Kk]{1}$")) {
+            return false;
         }
 
-        return longitudValida;
+        // Separar número y dígito verificador
+        String num = rut.substring(0, rut.length() - 1);
+        char dv = rut.charAt(rut.length() - 1);
+
+        // Validar que el número del rut sea válido
+        int numInt;
+        try {
+            numInt = Integer.parseInt(num);
+        } catch (NumberFormatException e) {
+            return false;
+        }
+        if (numInt < 1 || numInt > 99999999) {
+            return false;
+        }
+
+        // Validar el dígito verificador
+        int m = 0, s = 1;
+        for (; numInt != 0; numInt /= 10) {
+            s = (s + numInt % 10 * (9 - m++ % 6)) % 11;
+        }
+        char dvCalculado = (char) (s != 0 ? s + 47 : 75);
+        return Character.toUpperCase(dv) == Character.toUpperCase(dvCalculado);
+    }
     }
 
     public static boolean validarFecha(String fecha) {
@@ -109,4 +148,8 @@ public class Utilidades {
         }
     }
 
-}
+
+
+
+
+
