@@ -1,9 +1,13 @@
 
 import java.util.Scanner;
 import java.util.UUID;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 
 public class Utilidades {
     private static final Scanner sc = new Scanner(System.in);
+    private static final DateFormat DATE_FORMAT = new SimpleDateFormat("dd/MM/yyyy");
 
     public static String ValidaString(String str, String msj, int min, int max) {
         do {
@@ -75,6 +79,8 @@ public class Utilidades {
         }
     }
 
+    public static boolean validarLongitud(String str, int min, int max) {
+
 
     public static boolean validarRut(String rut) {
         rut = rut.replaceAll("\\.|\\-", "");
@@ -109,7 +115,38 @@ public class Utilidades {
     }
     }
 
+    public static boolean validarFecha(String fecha) {
+        try {
+            DATE_FORMAT.parse(fecha);
+            return true;
+        } catch (ParseException e) {
+            System.out.println("Fecha ingresada no es válida. Formato esperado: DD/MM/AAAA");
+            return false;
+        }
+    }
 
+    public static boolean validarHora(String hora) {
+        String[] partesHora = hora.split(":");
+        if (partesHora.length != 2) {
+            System.out.println("Hora ingresada no es válida. Formato esperado: HH:MM");
+            return false;
+        }
+
+        try {
+            int horas = Integer.parseInt(partesHora[0]);
+            int minutos = Integer.parseInt(partesHora[1]);
+
+            if (horas < 0 || horas > 23 || minutos < 0 || minutos > 59) {
+                System.out.println("Hora ingresada no es válida. Formato esperado: HH:MM");
+                return false;
+            }
+
+            return true;
+        } catch (NumberFormatException e) {
+            System.out.println("Hora ingresada no es válida. Formato esperado: HH:MM");
+            return false;
+        }
+    }
 
 
 

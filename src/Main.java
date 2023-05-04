@@ -1,11 +1,14 @@
+
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
+
         String opMenu=null;
         String nombre="", rut="",fechaNacimiento="",fono="",afp="",salud="",direccion="",comuna="";
         LocalDate fechaNac=null;
@@ -13,6 +16,7 @@ public class Main {
         int edad=0;
 
         ArrayList<Cliente> cli = new ArrayList<>();
+
         Scanner sc = new Scanner(System.in);
         System.out.println("***************************");
         System.out.println("** BIENVENIDO AL SISTEMA **");
@@ -21,8 +25,10 @@ public class Main {
         do {
             for (String s : Arrays.asList("", "** [ MENÚ PRINCIPAL ] **", "Seleccione una opcion:",
                     " [ 1 ] Agregar Cliente.", " [ 2 ] Agregar Profesional.", " [ 3 ] Agregar Administrativo.",
+
                     " [ 4 ] Agregar Capacitacion."," [ 5 ] Agregar Accidente."," [ 6 ] Eliminar Usuario."," [ 7 ] Listar Usuarios.",
                     " [ 8 ] Listar Usuarios por Tipo.", " [ 9 ] Listar Capacitaciones."," [ 0 ] Salir.")) {
+
                 System.out.println(s);
             }
             opMenu = sc.nextLine();
@@ -108,13 +114,7 @@ public class Main {
             }
         } while (opMenu.isEmpty());
 
-//nt numero=0;
 
-
-//numero=Utilidades.ValidaNumero(numero,"numero");
-
-}
-
-//nombre=if(Utilidades.validarLongitud(Utilidades.ValidaVacio(nombre,"Nombres"),10,50));
+    }
 
 }
