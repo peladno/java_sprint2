@@ -1,7 +1,7 @@
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class Profesional extends Usuario implements Asesoria {
+public class Profesional extends Usuario {
     private String titulo;
     private Date fechaIngreso;
 

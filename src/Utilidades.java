@@ -59,5 +59,18 @@ public class Utilidades {
             return false;
         }
     }
+    public static boolean validarLongitud(String str, int min, int max) {
+        boolean longitudValida = false;
+
+        if (str != null && str.length() >= min && str.length() <= max) {
+            longitudValida = true;
+        } else {
+            System.out.println("El campo requiere tener entre " + min + " y " + max + " caracteres");
+        }
+
+        return longitudValida;
+    }
+
+
 
 }

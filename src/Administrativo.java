@@ -1,4 +1,4 @@
-public class Administrativo extends Usuario implements Asesoria {
+public class Administrativo extends Usuario {
     
     private String area;
     private String experienciaPrev;
@@ -33,6 +33,6 @@ public class Administrativo extends Usuario implements Asesoria {
     }
     
     public void analizarUsuario() {
-        System.out.println("Nombre: " + getNombre() + "\nRUN: " + getRUN() + "\nÁrea: " + area + "\nExperiencia previa: " + experienciaPrev);
+        System.out.println("Nombre: " + getNombre() + "\nRUN: " + getRun() + "\nÁrea: " + area + "\nExperiencia previa: " + experienciaPrev);
     }
 }

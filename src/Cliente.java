@@ -1,4 +1,4 @@
-public class Cliente extends Usuario implements Asesoría {
+public class Cliente extends Usuario {
     
     private int rut;
     private String nombres;
@@ -95,8 +95,9 @@ public class Cliente extends Usuario implements Asesoría {
     }
     
     @Override
-    public void mostrarEdad() {
+    public String mostrarEdad() {
         System.out.println("El usuario tiene " + this.edad + " años");
+        return null;
     }
     
     @Override

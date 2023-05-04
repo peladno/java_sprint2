@@ -9,4 +9,6 @@ public class Main {
 
 }
 
+//nombre=if(Utilidades.validarLongitud(Utilidades.ValidaVacio(nombre,"Nombres"),10,50));
+
 }
