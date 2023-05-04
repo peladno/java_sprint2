@@ -1,10 +1,12 @@
+
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.
 import java.util.Arrays;
 import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        String opMenu=null;
+        String opMenu = null;
         Scanner sc = new Scanner(System.in);
         System.out.println("***************************");
         System.out.println("** BIENVENIDO AL SISTEMA **");
@@ -13,8 +15,8 @@ public class Main {
         do {
             for (String s : Arrays.asList("", "** [ MENÚ PRINCIPAL ] **", "Seleccione una opcion:",
                     " [ 1 ] Agregar Cliente.", " [ 2 ] Agregar Profesional.", " [ 3 ] Agregar Administrativo.",
-                    " [ 4 ] Agregar Capacitacion."," [ 5 ] Eliminar Usuario."," [ 6 ] Listar Usuarios.",
-                    " [ 7 ] Listar Usuarios por Tipo.", " [ 8 ] Listar Capacitaciones."," [ 9 ] Salir.")) {
+                    " [ 4 ] Agregar Capacitacion.", " [ 5 ] Eliminar Usuario.", " [ 6 ] Listar Usuarios.",
+                    " [ 7 ] Listar Usuarios por Tipo.", " [ 8 ] Listar Capacitaciones.", " [ 9 ] Salir.")) {
                 System.out.println(s);
             }
             opMenu = sc.nextLine();
@@ -55,13 +57,13 @@ public class Main {
                     opMenu = "";
             }
         } while (opMenu.isEmpty());
-//String nombre="";
-//nt numero=0;
-//nombre=Utilidades.ValidaVacio(nombre, "nombre");
-//numero=Utilidades.ValidaNumero(numero,"numero");
+        // String nombre="";
+        // nt numero=0;
+        // nombre=Utilidades.ValidaVacio(nombre, "nombre");
+        // numero=Utilidades.ValidaNumero(numero,"numero");
 
-}
+    }
 
-//nombre=if(Utilidades.validarLongitud(Utilidades.ValidaVacio(nombre,"Nombres"),10,50));
+    // nombre=if(Utilidades.validarLongitud(Utilidades.ValidaVacio(nombre,"Nombres"),10,50));
 
 }
