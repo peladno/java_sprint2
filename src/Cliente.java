@@ -96,12 +96,6 @@ public class Cliente extends Usuario {
     }
 
     @Override
-    public String mostrarEdad() {
-        System.out.println("El usuario tiene " + this.edad + " años");
-        return null;
-    }
-
-    @Override
     public void analizarUsuario() {
         System.out.println("Nombre: " + this.nombres + ", RUT: " + this.rut);
     }
