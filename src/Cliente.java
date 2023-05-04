@@ -2,7 +2,6 @@ import java.time.LocalDate;
 
 public class Cliente extends Usuario {
 
-
     private String telefono;
     private String afp;
     private String sistemaSalud;
@@ -10,8 +9,8 @@ public class Cliente extends Usuario {
     private String comuna;
     private int edad;
 
-
-    public Cliente(String nombre, LocalDate fechaNacimiento, String run, String telefono, String afp, String sistemaSalud, String direccion, String comuna, int edad) {
+    public Cliente(String nombre, LocalDate fechaNacimiento, String run, String telefono, String afp,
+            String sistemaSalud, String direccion, String comuna, int edad) {
         super(nombre, fechaNacimiento, run);
         this.telefono = telefono;
         this.afp = afp;
@@ -29,31 +28,25 @@ public class Cliente extends Usuario {
         this.telefono = telefono;
     }
 
-
     public String getAfp() {
         return afp;
     }
-
 
     public String getSistemaSalud() {
         return sistemaSalud;
     }
 
-
     public String getDireccion() {
         return direccion;
     }
-
 
     public void setDireccion(String direccion) {
         this.direccion = direccion;
     }
 
-
     public String getComuna() {
         return comuna;
     }
-
 
     public void setComuna(String comuna) {
         this.comuna = comuna;
@@ -62,7 +55,6 @@ public class Cliente extends Usuario {
     public int getEdad() {
         return edad;
     }
-
 
     public void setEdad(int edad) {
         this.edad = edad;

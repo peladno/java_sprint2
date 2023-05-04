@@ -13,15 +13,17 @@ public class Utilidades {
         do {
             System.out.println("Ingrese " + msj + ":");
             str = sc.nextLine();
-            if (str !=null ) {
-                str=str.trim();
+            if (str != null) {
+                str = str.trim();
                 if (str.length() < min) {
-                    System.out.println("El campo requiere tener un minimo de " + min +" caracteres:" + str + " tiene " + str.length() + " caracteres");
-                    str="";
+                    System.out.println("El campo requiere tener un minimo de " + min + " caracteres:" + str + " tiene "
+                            + str.length() + " caracteres");
+                    str = "";
                 }
                 if (str.length() > max) {
-                    System.out.println("El campo supera el maximo de " + max +" caracteres:" + str + " tiene " + str.length() + " caracteres");
-                    str="";
+                    System.out.println("El campo supera el maximo de " + max + " caracteres:" + str + " tiene "
+                            + str.length() + " caracteres");
+                    str = "";
                 }
             }
             if (str == null || str.trim().isEmpty()) {
@@ -34,7 +36,7 @@ public class Utilidades {
 
     // nombre=ValidaVacio(nombre,"Nombres");
 
-    public static int ValidaNumero(int num, String msj, int min, int  max) {
+    public static int ValidaNumero(int num, String msj, int min, int max) {
 
         boolean esNumero = false;
 
@@ -79,9 +81,6 @@ public class Utilidades {
         }
     }
 
-    public static boolean validarLongitud(String str, int min, int max) {
-
-
     public static boolean validarRut(String rut) {
         rut = rut.replaceAll("\\.|\\-", "");
 
@@ -112,7 +111,6 @@ public class Utilidades {
         }
         char dvCalculado = (char) (s != 0 ? s + 47 : 75);
         return Character.toUpperCase(dv) == Character.toUpperCase(dvCalculado);
-    }
     }
 
     public static boolean validarFecha(String fecha) {
@@ -147,9 +145,4 @@ public class Utilidades {
             return false;
         }
     }
-
-
-
-
-
-
+}
