@@ -35,4 +35,5 @@ public class Administrativo extends Usuario {
     public void analizarUsuario() {
         System.out.println("Nombre: " + getNombre() + "\nRUN: " + getRun() + "\nÁrea: " + area + "\nExperiencia previa: " + experienciaPrev);
     }
+
 }
