@@ -13,7 +13,7 @@ public class Accidente {
      * - Origen: máximo 100 caracteres
      * - Consecuencias: máximo 100 caracteres
      */
-
+    String rutCliente;
     String id_accidente;
     String fecha_accidente;
     String hora;
@@ -21,9 +21,10 @@ public class Accidente {
     String origen;
     String consecuencias;
 
-
-    public Accidente(String id_accidente, String fecha_accidente, String hora, String lugar, String origen,
-                     String consecuencias) {
+    public Accidente(String rutCliente, String id_accidente, String fecha_accidente, String hora, String lugar,
+            String origen,
+            String consecuencias) {
+        this.rutCliente = rutCliente;
         this.id_accidente = id_accidente;
         this.fecha_accidente = fecha_accidente;
         this.hora = hora;
@@ -78,5 +79,13 @@ public class Accidente {
 
     public void setConsecuencias(String consecuencias) {
         this.consecuencias = consecuencias;
+    }
+
+    public String getRutString() {
+        return rutCliente;
+    }
+
+    public void setRutString(String rutCliente) {
+        this.rutCliente = rutCliente;
     }
 }
