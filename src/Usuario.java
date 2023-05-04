@@ -4,12 +4,12 @@ import java.time.format.DateTimeFormatter;
 public class Usuario implements Asesoria {
     private String nombre;
     private LocalDate fechaNacimiento;
-    private int run;
+    private String run;
 
     public Usuario() {
     }
 
-    public Usuario(String nombre, LocalDate fechaNacimiento, int run) {
+    public Usuario(String nombre, LocalDate fechaNacimiento, String run) {
         this.nombre = nombre;
         this.fechaNacimiento = fechaNacimiento;
         this.run = run;
@@ -34,11 +34,11 @@ public class Usuario implements Asesoria {
         this.fechaNacimiento = fechaNacimiento;
     }
 
-    public int getRun() {
+    public String getRun() {
         return run;
     }
 
-    public void setRun(int run) {
+    public void setRun(String run) {
         this.run = run;
     }
 
