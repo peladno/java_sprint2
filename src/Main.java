@@ -17,10 +17,13 @@ public class Main {
         boolean rutValido;
         int edad = 0;
         // Var Profesional
-        String titulo = "", FechaIng = "";
+        String titulo = "", fechaIng = "";
+        LocalDate fechaIngreso;
 
-        ArrayList<Cliente> cli = new ArrayList<>();
-        ArrayList<Profesional> pro = new ArrayList<>();
+        // administrativo
+        String area = "", expPrevia = "";
+
+        Contenedor contenedor = new Contenedor();
 
         System.out.println("***************************");
         System.out.println("** BIENVENIDO AL SISTEMA **");
@@ -88,7 +91,9 @@ public class Main {
                     edad = Utilidades.ValidaNumero(edad, "Edad", 0, 150);
                     fechaNac = Utilidades.convertirFecha(fechaNacimiento);
                     // Asignaciones y validaciones a variables terminadas
-                    cli.add(new Cliente(nombre, fechaNac, rut, fono, afp, salud, direccion, comuna, edad));
+                    contenedor.almacenarUsuario(
+                            new Cliente(nombre, fechaNac, rut, fono, afp, salud, direccion, comuna, edad));
+
                     System.out.println("[ ** OK ** ] Cliente agregado con éxito, presione [ENTER] para continuar!");
                     sc.nextLine();
 
@@ -117,9 +122,50 @@ public class Main {
                     } while (!flagFecha || fechaNacimiento.isEmpty());
 
                     titulo = Utilidades.ValidaString(titulo, "Titulo", 5, 20);
+                    fechaNac = Utilidades.convertirFecha(fechaNacimiento);
+                    flagFecha = false;
+                    do {
+                        System.out.println("Ingrese fecha de Ingreso [12/03/2023]");
+                        fechaIng = sc.nextLine();
+                        flagFecha = Utilidades.validarFormatoFecha(fechaIng);
+                        if (!flagFecha) {
+                            System.out.println("** [ E R R O R ] **   Formato de Fecha Invalido: " + fechaNacimiento);
+                        }
+                    } while (!flagFecha || fechaIng.isEmpty());
+                    fechaIngreso = Utilidades.convertirFecha(fechaIng);
+                    contenedor.almacenarUsuario(new Profesional(nombre, fechaNac, rut, titulo, fechaIngreso));
+                    System.out.println("[ ** OK ** ] Profesional agregado con éxito, presione [ENTER] para continuar!");
+                    sc.nextLine();
 
                     break;
                 case "3":
+
+                    nombre = Utilidades.ValidaString(nombre, "nombre completo", 10, 50);
+
+                    do {
+                        System.out.println("Ingrese Rut sin puntos y con guion [11111111-1]");
+                        rut = sc.nextLine();
+                        rutValido = Utilidades.validarRut(rut);
+                        if (!rutValido) {
+                            System.out.println("** [ E R R O R ] **   RUT Invalido: " + rut);
+                        }
+                    } while (!rutValido);
+
+                    flagFecha = false;
+                    do {
+                        System.out.println("Ingrese fecha de nacimiento [12/03/2023]");
+                        fechaNacimiento = sc.nextLine();
+                        flagFecha = Utilidades.validarFormatoFecha(fechaNacimiento);
+                        if (!flagFecha) {
+                            System.out.println("** [ E R R O R ] **   Formato de Fecha Invalido: " + fechaNacimiento);
+                        }
+                    } while (!flagFecha || fechaNacimiento.isEmpty());
+
+                    area = Utilidades.ValidaString(area, "area", 5, 20);
+                    expPrevia = Utilidades.ValidaString(expPrevia, "experiencia previa", 1, 100);
+                    fechaNac = Utilidades.convertirFecha(fechaNacimiento);
+
+                    contenedor.almacenarUsuario(new Administrativo(nombre, fechaNac, rut, area, expPrevia));
 
                     break;
                 case "4":
@@ -129,6 +175,16 @@ public class Main {
 
                     break;
                 case "6":
+                    do {
+                        System.out.println("Ingrese Rut sin puntos y con guion [11111111-1]");
+                        rut = sc.nextLine();
+                        rutValido = Utilidades.validarRut(rut);
+                        if (!rutValido) {
+                            System.out.println("** [ E R R O R ] **   RUT Invalido: " + rut);
+                        }
+                    } while (!rutValido);
+
+                    contenedor.eliminarUsuario(rut);
 
                     break;
 
@@ -137,6 +193,10 @@ public class Main {
                     break;
 
                 case "8":
+                    // contenedor.listarClientes();
+                    // contenedor.listarAdministrativos();
+                    // contenedor.listarProfesionales();
+                    contenedor.analizaUsuario();
 
                     break;
 

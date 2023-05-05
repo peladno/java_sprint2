@@ -1,14 +1,14 @@
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-import java.util.Date;
 
 public class Profesional extends Usuario {
     private String titulo;
-    private Date fechaIngreso;
+    private LocalDate fechaIngreso;
 
-    public Profesional() {}
+    public Profesional() {
+    }
 
-    public Profesional(String nombre, LocalDate fechaNacimiento, String run, String titulo, Date fechaIngreso) {
+    public Profesional(String nombre, LocalDate fechaNacimiento, String run, String titulo, LocalDate fechaIngreso) {
         super(nombre, fechaNacimiento, run);
         this.titulo = titulo;
         this.fechaIngreso = fechaIngreso;
@@ -22,11 +22,11 @@ public class Profesional extends Usuario {
         this.titulo = titulo;
     }
 
-    public Date getFechaIngreso() {
+    public LocalDate getFechaIngreso() {
         return fechaIngreso;
     }
 
-    public void setFechaIngreso(Date fechaIngreso) {
+    public void setFechaIngreso(LocalDate fechaIngreso) {
         this.fechaIngreso = fechaIngreso;
     }
 

@@ -2,33 +2,29 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Contenedor {
-    private List<Asesoria> asesorias;
-    private List<Capacitacion> capacitaciones;
-    private List<Usuario> usuarios;
 
-    public Contenedor() {
-        asesorias = new ArrayList<>();
-        capacitaciones = new ArrayList<>();
-    }
+    List<Asesoria> asesorias = new ArrayList<>();
+    List<Capacitacion> capacitaciones = new ArrayList<>();
+    List<Usuario> usuarios = new ArrayList<>();
 
-    public void almacenarCliente(Cliente cliente) {
-        asesorias.add(cliente);
-    }
-
-    public void almacenarProfesional(Profesional profesional) {
-        asesorias.add(profesional);
-    }
-
-    public void almacenarAdministrativo(Administrativo administrativo) {
-        asesorias.add(administrativo);
+    public void almacenarUsuario(Usuario usuario) {
+        usuarios.add(usuario);
     }
 
     public void almacenarCapacitacion(Capacitacion capacitacion) {
         capacitaciones.add(capacitacion);
     }
 
-    public void eliminarUsuario(Usuario usuario) {
-        usuarios.remove(usuario);
+    // en teoria funciona, pero no probe con distintos tipos de usuarios
+
+    public void eliminarUsuario(String rut) {
+        for (int i = 0; i < usuarios.size(); i++) {
+            Usuario usuario = usuarios.get(i);
+            if (usuario.getRun().equals(rut)) {
+                usuarios.remove(i);
+                break;
+            }
+        }
     }
 
     public void analizaUsuario() {
@@ -37,23 +33,16 @@ public class Contenedor {
             usuario.analizarUsuario();
         }
     }
-    public void listarUsuarios() {
-        for (Asesoria a : asesorias) {
-            System.out.println(a.toString());
-        }
-    }
 
-    public void listarUsuariosPorTipo(String tipo) {
-        for (Asesoria a : asesorias) {
-            if (a.getClass().getSimpleName().equals(tipo)) {
-                System.out.println(a.toString());
-            }
-        }
-    }
+    // public void listarUsuarios() {
+    // for (Usuario ase : usuarios) {
+    // System.out.println(ase.toString());
+    // }
+    // }
 
     public void listarCapacitaciones() {
-        for (Capacitacion c : capacitaciones) {
-            System.out.println(c.toString());
+        for (Capacitacion cap : capacitaciones) {
+            System.out.println(cap.toString());
         }
     }
 }
