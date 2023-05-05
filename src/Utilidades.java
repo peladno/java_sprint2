@@ -117,7 +117,6 @@ public class Utilidades {
         return Character.toUpperCase(dv) == Character.toUpperCase(dvCalculado);
     }
 
-
     public static LocalDate convertirFecha(String fechaString) {
         DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         return LocalDate.parse(fechaString, formato);
@@ -132,11 +131,6 @@ public class Utilidades {
             return false;
         }
     }
-
-
-
-    }
-
 
     public static boolean validarFecha(String fecha) {
         try {
