@@ -9,7 +9,8 @@ public class Cliente extends Usuario {
     private String comuna;
     private int edad;
 
-    public Cliente(String nombre, LocalDate fechaNacimiento, String run, String telefono, String afp, String sistemaSalud, String direccion, String comuna, int edad) {
+    public Cliente(String nombre, LocalDate fechaNacimiento, String run, String telefono, String afp,
+            String sistemaSalud, String direccion, String comuna, int edad) {
         super(nombre, fechaNacimiento, run);
         this.telefono = telefono;
         this.afp = afp;
@@ -21,6 +22,10 @@ public class Cliente extends Usuario {
 
     public String getTelefono() {
         return telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
     }
 
     public String getAfp() {
@@ -35,20 +40,26 @@ public class Cliente extends Usuario {
         return direccion;
     }
 
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+
     public String getComuna() {
         return comuna;
+    }
+
+    public void setComuna(String comuna) {
+        this.comuna = comuna;
     }
 
     public int getEdad() {
         return edad;
     }
 
-    @Override
-    public String mostrarEdad() {
-        System.out.println("El usuario tiene " + this.edad + " años");
-        return null;
+    public void setEdad(int edad) {
+        this.edad = edad;
     }
-    
+
     @Override
     public void analizarUsuario() {
         System.out.println("Nombre: " + super.getNombre() + ", RUT: " + super.getRun());

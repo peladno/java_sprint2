@@ -4,22 +4,26 @@ import java.util.Scanner;
 import java.util.UUID;
 import java.time.format.DateTimeFormatter;
 import java.time.LocalDate;
+
 public class Utilidades {
     private static final Scanner sc = new Scanner(System.in);
+    private static final DateFormat DATE_FORMAT = new SimpleDateFormat("dd/MM/yyyy");
 
     public static String ValidaString(String str, String msj, int min, int max) {
         do {
             System.out.println("Ingrese " + msj + ":");
             str = sc.nextLine();
-            if (str !=null ) {
-                str=str.trim();
+            if (str != null) {
+                str = str.trim();
                 if (str.length() < min) {
-                    System.out.println("El campo requiere tener un minimo de " + min +" caracteres:" + str + " tiene " + str.length() + " caracteres");
-                    str="";
+                    System.out.println("El campo requiere tener un minimo de " + min + " caracteres:" + str + " tiene "
+                            + str.length() + " caracteres");
+                    str = "";
                 }
                 if (str.length() > max) {
-                    System.out.println("El campo supera el maximo de " + max +" caracteres:" + str + " tiene " + str.length() + " caracteres");
-                    str="";
+                    System.out.println("El campo supera el maximo de " + max + " caracteres:" + str + " tiene "
+                            + str.length() + " caracteres");
+                    str = "";
                 }
             }
             if (str == null || str.trim().isEmpty()) {
@@ -32,7 +36,7 @@ public class Utilidades {
 
     // nombre=ValidaVacio(nombre,"Nombres");
 
-    public static int ValidaNumero(int num, String msj, int min, int  max) {
+    public static int ValidaNumero(int num, String msj, int min, int max) {
 
         boolean esNumero = false;
 
@@ -77,7 +81,6 @@ public class Utilidades {
         }
     }
 
-
     public static boolean validarRut(String rut) {
         rut = rut.replaceAll("\\.|\\-", "");
 
@@ -110,6 +113,7 @@ public class Utilidades {
         return Character.toUpperCase(dv) == Character.toUpperCase(dvCalculado);
     }
 
+
     public static LocalDate convertirFecha(String fechaString) {
         DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         return LocalDate.parse(fechaString, formato);
@@ -130,9 +134,36 @@ public class Utilidades {
     }
 
 
+    public static boolean validarFecha(String fecha) {
+        try {
+            DATE_FORMAT.parse(fecha);
+            return true;
+        } catch (ParseException e) {
+            System.out.println("Fecha ingresada no es válida. Formato esperado: DD/MM/AAAA");
+            return false;
+        }
+    }
 
+    public static boolean validarHora(String hora) {
+        String[] partesHora = hora.split(":");
+        if (partesHora.length != 2) {
+            System.out.println("Hora ingresada no es válida. Formato esperado: HH:MM");
+            return false;
+        }
 
+        try {
+            int horas = Integer.parseInt(partesHora[0]);
+            int minutos = Integer.parseInt(partesHora[1]);
 
+            if (horas < 0 || horas > 23 || minutos < 0 || minutos > 59) {
+                System.out.println("Hora ingresada no es válida. Formato esperado: HH:MM");
+                return false;
+            }
 
-
-
+            return true;
+        } catch (NumberFormatException e) {
+            System.out.println("Hora ingresada no es válida. Formato esperado: HH:MM");
+            return false;
+        }
+    }
+}
