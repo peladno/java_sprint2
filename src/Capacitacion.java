@@ -93,4 +93,8 @@ public class Capacitacion {
                 ", cantidadAsistentes=" + cantidadAsistentes +
                 '}';
     }
+
+    public Object getCliente() {
+        return null;
+    }
 }
