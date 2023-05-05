@@ -7,14 +7,18 @@ public class Main {
     private static final Scanner sc = new Scanner(System.in);
     public static void main(String[] args) {
 
-        String opMenu = null;
-        String nombre = "", rut = "", fechaNacimiento = "", fono = "", afp = "", salud = "", direccion = "",
-                comuna = "";
-        LocalDate fechaNac = null;
+        String opMenu=null;
+        boolean flagFecha= false;
+        //Var Cliente
+        String nombre="", rut="",fechaNacimiento="",fono="",afp="",salud="",direccion="",comuna="";
+        LocalDate fechaNac;
         boolean rutValido;
-        int edad = 0;
+        int edad=0;
+        //Var Profesional
+        String titulo="",FechaIng="";
 
         ArrayList<Cliente> cli = new ArrayList<>();
+        ArrayList<Profesional> pro = new ArrayList<>();
 
               System.out.println("***************************");
         System.out.println("** BIENVENIDO AL SISTEMA **");
@@ -43,11 +47,21 @@ public class Main {
                         if (!rutValido) {
                             System.out.println("** [ E R R O R ] **   RUT Invalido: " + rut);
                         }
-                    } while (!rutValido);
-                    fechaNac = Utilidades.ValidaString(fechaNac, "Fecha de Nacimiento [12/03/2023]", 8, 10);
-                    fono = Utilidades.ValidaString(fono, "Telefono", 5, 15);
-                    afp = Utilidades.ValidaString(afp, "AFP", 4, 30);
+
+                    }while (!rutValido);
+                    flagFecha=false;
                     do {
+                        System.out.println("Ingrese fecha de nacimiento [12/03/2023]");
+                        fechaNacimiento=sc.nextLine();
+                        flagFecha=Utilidades.validarFormatoFecha(fechaNacimiento);
+                        if (!flagFecha){
+                            System.out.println("** [ E R R O R ] **   Formato de Fecha Invalido: " + fechaNacimiento);
+                        }
+                    }while(!flagFecha || fechaNacimiento.isEmpty());
+                    fono=Utilidades.ValidaString(fono,"Telefono",5,15);
+                    afp=Utilidades.ValidaString(afp,"AFP",4,30);
+                    do{
+
                         System.out.println("Seleccione Sistema de Salud");
                         System.out.println(" [ 1 ] FONASA");
                         System.out.println(" [ 2 ] ISAPRE");
@@ -65,19 +79,48 @@ public class Main {
                                 System.out.println("** [ E R R O R ] **   Opcion Invalida: " + salud);
                                 break;
                         }
-                    } while (salud.isEmpty());
-                    direccion = Utilidades.ValidaString(direccion, "Direccion", 1, 70);
-                    comuna = Utilidades.ValidaString(comuna, "comuna", 4, 50);
-                    edad = Utilidades.ValidaNumero(edad, "Edad", 0, 150);
-                    // Asignaciones y validaciones a variables terminadas
-                    cli.add(new Cliente(nombre, fechaNac, rut, fono, afp, salud, direccion, comuna, edad));
 
-                    System.out.println("Termino el case");
+                    }while (salud.isEmpty());
+                    direccion=Utilidades.ValidaString(direccion,"Direccion",1,70);
+                    comuna =Utilidades.ValidaString(comuna,"comuna",4,50);
+                    edad=Utilidades.ValidaNumero(edad,"Edad",0,150);
+                    fechaNac=Utilidades.convertirFecha(fechaNacimiento);
+                    //Asignaciones y validaciones a variables terminadas
+                    cli.add(new Cliente(nombre,fechaNac,rut,fono,afp,salud,direccion,comuna,edad));
+                    System.out.println("[ ** OK ** ] Cliente agregado con éxito, presione [ENTER] para continuar!");
+                    sc.nextLine();
+
+
                     break;
                 case "2":
 
+                    nombre=Utilidades.ValidaString(nombre, "nombre completo",10,50);
+
+                    do{
+                        System.out.println("Ingrese Rut sin puntos y con guion [11111111-1]");
+                        rut=sc.nextLine();
+                        rutValido=Utilidades.validarRut(rut);
+                        if (!rutValido){
+                            System.out.println("** [ E R R O R ] **   RUT Invalido: " + rut);
+                        }
+                    }while (!rutValido);
+
+                    flagFecha=false;
+                    do {
+                        System.out.println("Ingrese fecha de nacimiento [12/03/2023]");
+                        fechaNacimiento=sc.nextLine();
+                        flagFecha=Utilidades.validarFormatoFecha(fechaNacimiento);
+                        if (!flagFecha){
+                            System.out.println("** [ E R R O R ] **   Formato de Fecha Invalido: " + fechaNacimiento);
+                        }
+                    }while(!flagFecha || fechaNacimiento.isEmpty());
+
+                    titulo=Utilidades.ValidaString(titulo,"Titulo",5,20);
+                    
+
                     break;
                 case "3":
+
 
                     break;
                 case "4":
@@ -108,10 +151,10 @@ public class Main {
 
                 default:
                     System.out.println("** [ E R R O R ] **   Valor inesperado para: " + opMenu);
-                    opMenu = "";
+
             }
+            opMenu="";
         } while (opMenu.isEmpty());
 
-    }
 
 }

@@ -1,9 +1,12 @@
 
+import java.time.format.DateTimeParseException;
 import java.util.Scanner;
 import java.util.UUID;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.format.DateTimeFormatter;
+
 import java.time.LocalDate;
 
 public class Utilidades {
@@ -51,11 +54,11 @@ public class Utilidades {
                 sc.next();
                 num = 1;
             }
-            if (num > min) {
+            if (num < min) {
                 System.out.println("[ ** WARNING ** ] Valor debe ser superior a " + min);
                 esNumero = false;
             }
-            if (num < max) {
+            if (num > max) {
                 System.out.println("[ ** WARNING ** ] Valor No debe ser superior a " + max);
                 esNumero = false;
             }
@@ -113,6 +116,27 @@ public class Utilidades {
         char dvCalculado = (char) (s != 0 ? s + 47 : 75);
         return Character.toUpperCase(dv) == Character.toUpperCase(dvCalculado);
     }
+
+
+    public static LocalDate convertirFecha(String fechaString) {
+        DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        return LocalDate.parse(fechaString, formato);
+    }
+
+    public static boolean validarFormatoFecha(String fechaString) {
+        DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        try {
+            formato.parse(fechaString);
+            return true;
+        } catch (DateTimeParseException e) {
+            return false;
+        }
+    }
+
+
+
+    }
+
 
     public static boolean validarFecha(String fecha) {
         try {
