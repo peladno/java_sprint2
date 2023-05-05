@@ -71,4 +71,5 @@ public class Usuario implements Asesoria {
                 ", run=" + run +
                 '}';
     }
-}
+
+   }

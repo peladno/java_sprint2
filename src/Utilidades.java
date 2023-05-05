@@ -4,6 +4,7 @@ import java.util.UUID;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 
 public class Utilidades {
     private static final Scanner sc = new Scanner(System.in);
@@ -144,5 +145,9 @@ public class Utilidades {
             System.out.println("Hora ingresada no es válida. Formato esperado: HH:MM");
             return false;
         }
+    }
+
+    public static LocalDate ValidaString(LocalDate fechaNac, String msj, int min, int max) {
+        return null;
     }
 }

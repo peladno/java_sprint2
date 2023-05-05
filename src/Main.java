@@ -1,12 +1,10 @@
-
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
+    private static final Scanner sc = new Scanner(System.in);
     public static void main(String[] args) {
 
         String opMenu = null;
@@ -18,8 +16,7 @@ public class Main {
 
         ArrayList<Cliente> cli = new ArrayList<>();
 
-        Scanner sc = new Scanner(System.in);
-        System.out.println("***************************");
+              System.out.println("***************************");
         System.out.println("** BIENVENIDO AL SISTEMA **");
         System.out.println("***************************");
         System.out.println(" ");
