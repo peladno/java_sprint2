@@ -32,7 +32,6 @@ public class Main {
         do {
             for (String s : Arrays.asList("", "** [ MENÚ PRINCIPAL ] **", "Seleccione una opcion:",
                     " [ 1 ] Agregar Cliente.", " [ 2 ] Agregar Profesional.", " [ 3 ] Agregar Administrativo.",
-
                     " [ 4 ] Agregar Capacitacion.", " [ 5 ] Agregar Accidente.", " [ 6 ] Eliminar Usuario.",
                     " [ 7 ] Listar Usuarios.",
                     " [ 8 ] Listar Usuarios por Tipo.", " [ 9 ] Listar Capacitaciones.", " [ 0 ] Salir.")) {
@@ -189,14 +188,11 @@ public class Main {
                     break;
 
                 case "7":
-
+                    contenedor.analizaUsuario();
                     break;
 
                 case "8":
-                    // contenedor.listarClientes();
-                    // contenedor.listarAdministrativos();
-                    // contenedor.listarProfesionales();
-                    contenedor.analizaUsuario();
+                    contenedor.listarPorTipo();
 
                     break;
 
@@ -213,7 +209,7 @@ public class Main {
 
             }
             opMenu = "";
-        } while (opMenu.isEmpty());
+        } while (true);
 
     }
 }

@@ -15,8 +15,6 @@ public class Contenedor {
         capacitaciones.add(capacitacion);
     }
 
-    // en teoria funciona, pero no probe con distintos tipos de usuarios
-
     public void eliminarUsuario(String rut) {
         for (int i = 0; i < usuarios.size(); i++) {
             Usuario usuario = usuarios.get(i);
@@ -34,11 +32,20 @@ public class Contenedor {
         }
     }
 
-    // public void listarUsuarios() {
-    // for (Usuario ase : usuarios) {
-    // System.out.println(ase.toString());
-    // }
-    // }
+    public void listarPorTipo() {
+        for (Usuario usuario : usuarios) {
+            if (usuario instanceof Cliente) {
+                Cliente cliente = (Cliente) usuario;
+                System.out.println("Cliente: " + cliente.getNombre() + " ");
+            } else if (usuario instanceof Profesional) {
+                Profesional profesional = (Profesional) usuario;
+                System.out.println("Profesional: " + profesional.getNombre() + " ");
+            } else if (usuario instanceof Administrativo) {
+                Administrativo administrativo = (Administrativo) usuario;
+                System.out.println("Administrativo: " + administrativo.getNombre() + " ");
+            }
+        }
+    }
 
     public void listarCapacitaciones() {
         for (Capacitacion cap : capacitaciones) {

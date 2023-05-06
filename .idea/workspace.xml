@@ -4,80 +4,44 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a0de3246-cb62-4500-ae58-0ead40ed5625" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Profesional.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Profesional.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Utilidades.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utilidades.java" afterDir="false" />
-
-      <change beforePath="$PROJECT_DIR$/src/Accidente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Accidente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Asesoria.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Asesoria.java" afterDir="false" />
-
-      <change beforePath="$PROJECT_DIR$/src/Administrativo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Administrativo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Asesoría.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Asesoria.java" afterDir="false" />
-
-      <change beforePath="$PROJECT_DIR$/src/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cliente.java" afterDir="false" />
-
-    </list>
+    <list default="true" id="e3582b0b-d2eb-4568-b02d-03058ce90551" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
-  </component>
-  <component name="ProjectId" id="2P2H96us8T1tUkkv4RXHAYZ347j" />
+  <component name="ProjectId" id="2POfjHutkRWO82P77Wg1Kjexht4" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/javierperezurrutia/Documents/Proyectos/java_sprint2&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
-
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/javierperezurrutia/Documents/Proyectos/java_sprint2",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
     "vue.rearranger.settings.migration": "true"
-
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="a0de3246-cb62-4500-ae58-0ead40ed5625" name="Changes" comment="" />
-      <created>1682648101947</created>
+      <changelist id="e3582b0b-d2eb-4568-b02d-03058ce90551" name="Changes" comment="" />
+      <created>1683333182704</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1682648101947</updated>
-      <workItem from="1683159224246" duration="62000" />
-      <workItem from="1683159296736" duration="632000" />
-
-      <workItem from="1683161682748" duration="1113000" />
-
+      <updated>1683333182704</updated>
+      <workItem from="1683333183704" duration="34000" />
+      <workItem from="1683333265028" duration="41000" />
+      <workItem from="1683333456718" duration="3334000" />
     </task>
     <servers />
   </component>
