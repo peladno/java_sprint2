@@ -239,20 +239,26 @@ public class Main {
                     } while (!rutValido);
 
                     contenedor.eliminarUsuario(rut);
-
+                    System.out.println("[ ** OK ** ] presione [ENTER] para continuar!");
+                    sc.nextLine();
                     break;
 
                 case "7":
                     contenedor.analizaUsuario();
+                    System.out.println("[ ** OK ** ] presione [ENTER] para continuar!");
+                    sc.nextLine();
                     break;
 
                 case "8":
                     contenedor.listarPorTipo();
-
+                    System.out.println("[ ** OK ** ] presione [ENTER] para continuar!");
+                    sc.nextLine();
                     break;
 
                 case "9":
                     contenedor.listarCapacitaciones();
+                    System.out.println("[ ** OK ** ] presione [ENTER] para continuar!");
+                    sc.nextLine();
                     break;
 
                 case "0":
@@ -260,7 +266,9 @@ public class Main {
                     break;
 
                 default:
-                    System.out.println("** [ E R R O R ] **   Valor inesperado para: " + opMenu);
+                    System.out.println("** [ E R R O R ] **   Valor inesperado para: " + opMenu + "\nElija opción válida");
+                    System.out.println("[ ** OK ** ] presione [ENTER] para continuar!");
+                    sc.nextLine();
 
             }
         } while (true);
