@@ -6,6 +6,7 @@ public class Contenedor {
     List<Asesoria> asesorias = new ArrayList<>();
     List<Capacitacion> capacitaciones = new ArrayList<>();
     List<Usuario> usuarios = new ArrayList<>();
+    List<Accidente> accidentes = new ArrayList<>();
 
     public void almacenarUsuario(Usuario usuario) {
         usuarios.add(usuario);
@@ -13,6 +14,21 @@ public class Contenedor {
 
     public void almacenarCapacitacion(Capacitacion capacitacion) {
         capacitaciones.add(capacitacion);
+    }
+
+    public void almacenarAccidente(Accidente accidente) {
+        accidentes.add(accidente);
+    }
+
+    public boolean buscarUsuario(String rut){
+        boolean rutEncontrado=false;
+        for (Usuario usuario : usuarios) {
+            if (usuario.getRun().equals(rut)) {
+                rutEncontrado = true;
+                break;
+            }
+        }
+        return (rutEncontrado);
     }
 
     public void eliminarUsuario(String rut) {

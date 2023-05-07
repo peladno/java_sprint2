@@ -165,6 +165,16 @@ public class Utilidades {
         }
     }
 
+    public static boolean validaDia(String dia) {
+        String[] diasPermitidos = {"lunes", "martes", "miercoles", "jueves", "viernes", "sabado", "domingo"};
+        for (String diaPermitido : diasPermitidos) {
+            if (diaPermitido.equalsIgnoreCase(dia)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public static LocalDate ValidaString(LocalDate fechaNac, String msj, int min, int max) {
         return null;
     }

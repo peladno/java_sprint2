@@ -1,3 +1,6 @@
+
+import java.time.LocalDate;
+
 public class Accidente {
     /*
      * Accidente
@@ -19,18 +22,16 @@ public class Accidente {
     String hora;
     String lugar;
     String origen;
-    String consecuencias;
+    String descripcion;
 
-    public Accidente(String rutCliente, String id_accidente, String fecha_accidente, String hora, String lugar,
-            String origen,
-            String consecuencias) {
+    public Accidente(String rutCliente, LocalDate convertirFecha, String id_accidente, String descripcionAccidente) {
         this.rutCliente = rutCliente;
         this.id_accidente = id_accidente;
         this.fecha_accidente = fecha_accidente;
         this.hora = hora;
         this.lugar = lugar;
         this.origen = origen;
-        this.consecuencias = consecuencias;
+        this.descripcion = descripcionAccidente;
     }
 
     public String getId_accidente() {
@@ -74,11 +75,11 @@ public class Accidente {
     }
 
     public String getConsecuencias() {
-        return consecuencias;
+        return descripcion;
     }
 
-    public void setConsecuencias(String consecuencias) {
-        this.consecuencias = consecuencias;
+    public void setConsecuencias(String descripcionAccidente) {
+        this.descripcion = descripcionAccidente;
     }
 
     public String getRutString() {

@@ -4,14 +4,14 @@ public class Capacitacion {
     private int identificador;
     private String rutCliente;
     private String dia;
-    private LocalTime hora;
+    private int hora;
     private String lugar;
     private String duracion;
     private int cantidadAsistentes;
 
     public Capacitacion() {}
 
-    public Capacitacion(int identificador, String rutCliente, String dia, LocalTime hora, String lugar, String duracion, int cantidadAsistentes) {
+    public Capacitacion(int identificador, String rutCliente, String dia, int hora, String lugar, String duracion, int cantidadAsistentes) {
         this.identificador = identificador;
         this.rutCliente = rutCliente;
         this.dia = dia;
@@ -45,11 +45,11 @@ public class Capacitacion {
         this.dia = dia;
     }
 
-    public LocalTime getHora() {
+    public int getHora() {
         return hora;
     }
 
-    public void setHora(LocalTime hora) {
+    public void setHora(int hora) {
         this.hora = hora;
     }
 
@@ -78,7 +78,7 @@ public class Capacitacion {
     }
 
     public String mostrarDetalle() {
-        return "La capacitación será en " + lugar + " a las " + hora.toString() + " del día " + dia + ", y durará " + duracion + " minutos.";
+        return "La capacitación será en " + lugar + " a las " + hora + " del día " + dia + ", y durará " + duracion + " minutos.";
     }
 
     @Override
